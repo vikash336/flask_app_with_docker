@@ -2,14 +2,12 @@ pipeline {
     agent any
 
     environment {
-        // Define your Docker Hub credentials
-        DOCKER_HUB_CREDENTIALS = credentials('your-docker-hub-credentials-id')
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-vikash')
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Check out your source code from your version control system (e.g., Git)
                 checkout scm
             }
         }
