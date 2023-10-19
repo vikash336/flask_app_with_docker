@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  flask_web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - my-bridge-network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: flask_test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    networks:
+      - my-bridge-network
+    ports:
+      - "5432:5432"
+
+networks:
+  my-bridge-network:
