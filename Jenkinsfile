@@ -6,16 +6,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "sudo docker build -t vikash077/flask_jenkinss ."
+                    sh "docker build -t vikash077/flask_jenkinss ."
                 }
             }
         }
