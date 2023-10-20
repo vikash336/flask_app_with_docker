@@ -15,14 +15,17 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t vikash077/flask_docker:latest ."
+                    sh "docker build -t vikash077/jenkins-docker-hub ."
                 }
             }
         }
-        stage('login to dockerhub'){
-          steps{
-            sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker loing -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin}"
-          }
+
+        stage('Login to Docker Hub') {
+            steps {
+                script {
+                    sh "echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin"
+                }
+            }
         }
 
         stage('Push to Docker Hub') {
