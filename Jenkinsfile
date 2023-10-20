@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t vikash077/Flask_jenkinss ."
+                    sh "docker build -t vikash077/flask_jenkinss ."
                 }
             }
         }
