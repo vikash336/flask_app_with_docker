@@ -26,7 +26,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    sh "docker push vikash077/flask_docker:latest"
+                    sh "docker push vikash077/flask_jenkinss"
                 }
             }
         }
