@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:root@localhost:5432/flask_test'
+SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:root@postgres:5432/flask_test'

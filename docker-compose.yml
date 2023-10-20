@@ -12,10 +12,13 @@ services:
 
   db:
     image: postgres:latest
+    container_name: postgres
     environment:
       POSTGRES_DB: flask_test
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - my-bridge-network
     ports:
@@ -23,3 +26,7 @@ services:
 
 networks:
   my-bridge-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
