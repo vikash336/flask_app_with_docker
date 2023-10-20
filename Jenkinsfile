@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-vikash')
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub')
     }
 
     stages {
@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t vikash077/jenkins-docker-hub ."
+                    sh "docker build -t vikash077/Flask_jenkinss ."
                 }
             }
         }
